@@ -13,19 +13,19 @@ class ReaderList extends Component{
               		<div className="bookshelf">
 						<h2 className="bookshelf-title">正在阅读</h2>
       					<div className="bookshelf-books">
-       					      <BooksList books={ this.props.BooksData.filter((a) => (a.shelf === "currentlyReading")) } changeStatus={ this.props.changeStatus } add={false}/>
+       					      <BooksList books={ this.props.BooksData.filter((a) => (a.shelf === "currentlyReading")) } changeStatus={ this.props.changeStatus } updateBook={ this.props.updateBook } add={false}/>
 						</div>
       				</div>
        				<div className="bookshelf">
 						<h2 className="bookshelf-title">想要阅读</h2>
 						<div className="bookshelf-books">
-    						<BooksList books={ this.props.BooksData.filter((a) => (a.shelf === "wantToRead")) } changeStatus={ this.props.changeStatus } add={false}/>
-						</div>
+    						<BooksList books={ this.props.BooksData.filter((a) => (a.shelf === "wantToRead")) } changeStatus={ this.props.changeStatus } updateBook={ this.props.updateBook } add={false}/>
+						</div> 
        				</div>
       				 <div className="bookshelf">
 						<h2 className="bookshelf-title">已经阅读</h2>
 						<div className="bookshelf-books">
-							<BooksList books={ this.props.BooksData.filter((a) => (a.shelf === "read")) } changeStatus={ this.props.changeStatus } add={false}/>
+							<BooksList books={ this.props.BooksData.filter((a) => (a.shelf === "read")) } changeStatus={ this.props.changeStatus } updateBook={ this.props.updateBook } add={false}/>
 						</div>
        				</div>
             	</div>
