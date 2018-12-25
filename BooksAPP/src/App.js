@@ -24,7 +24,15 @@ class BooksApp extends React.Component {
             }
        	})
   	}
-
+	updateBook = (book, shelf) => {
+  BooksAPI.update(book, shelf).then(() => {
+    book.shelf = shelf
+    this.setState(state => ({
+      /* 从我书架上的图书中筛选出不是当前id的图书，然后利用 concat 方法与刚刚更新的这本图书合并 */
+      allBooks: state.allBooks.filter(b => b.id !== book.id).concat(book)
+    }))
+  })
+}
 	 classedBook = (searchBooks)=>Array.isArray(searchBooks)&&
 	searchBooks.map((searchBook) => {
   	if (Array.isArray(this.state.allBooks.filter((book)=>(book.id === searchBook.id)))) {
